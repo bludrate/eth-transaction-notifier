@@ -1,0 +1,20 @@
+{
+  "chats": [
+    {
+      "id": 277063089,
+      "addresses": []
+    },
+    {
+      "id": 826540,
+      "addresses": [
+        "0xe34e1944e776f39b9252790a0527ebda647ae668"
+      ]
+    }
+  ],
+  "addresses": [
+    {
+      "hash": "0xe34e1944e776f39b9252790a0527ebda647ae668",
+      "lastTransaction": {}
+    }
+  ]
+}
