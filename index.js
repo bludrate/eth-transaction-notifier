@@ -22,9 +22,24 @@ const keyboards = {
     one_time_keyboard: false
   }
 };
+const http = require('http')
+const port = 3000;
+const server = http.createServer(( req, resp ) => {
+    fs.readFile('state.json', ( error, content ) => {
+      resp.end(content);
+    });
+});
+
+server.listen(port, (err) => {
+    if (err) {
+        return console.log('something bad happened', err);
+    }
+    console.log(`server is listening on ${port}`);
+})
 
 let lastBlock = 0;
 let state = {};
+
 
 function getLastBlock() {
   return new Promise( ( resolve ) => {
