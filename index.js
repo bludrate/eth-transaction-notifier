@@ -26,7 +26,7 @@ const http = require('http')
 const port = 8080;
 const server = http.createServer(( req, resp ) => {
   switch ( req.url ) {
-    case 'clear':
+    case '/clear':
       state = {
         chats: [],
         addresses: []
