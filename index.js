@@ -25,9 +25,20 @@ const keyboards = {
 const http = require('http')
 const port = 8080;
 const server = http.createServer(( req, resp ) => {
-    fs.readFile('state.json', ( error, content ) => {
-      resp.end(content);
-    });
+  switch ( req.url ) {
+    case 'clear':
+      state = {
+        chats: [],
+        addresses: []
+      };
+
+      saveState();
+      break;
+    default:
+      fs.readFile('state.json', ( error, content ) => {
+        resp.end(content);
+      });
+  }
 });
 
 server.listen(port, (err) => {
