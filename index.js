@@ -258,9 +258,12 @@ function onMessage( message ) {
       chat = state.chats.find( chat => chat.id === message.chat.id );
 
       if ( !chat ) {
-        state.chats.push( {
-          id: message.chat.id
-        } );
+        chat = {
+          id: message.chat.id,
+          addresses: []
+        }
+
+        state.chats.push( chat );
       }
 
       addAddress( chat, message.text );
